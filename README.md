@@ -29,10 +29,7 @@ supports. When those browsers catch up, this script will work in them).
 
 ## Screenshots
 
-These screenshots are from a previous version, but the main interface hasn't
-changed much.
-
-| ![YouTube Local Favorites Main Interface](https://raw.githubusercontent.com/integers/youtube-local-favorites/master/screenshots/youtube-local-favorites-screenshot-1.png "YouTube Local Favorites Main Interface") | ![YouTube Local Favorites HTML Export Interface](https://raw.githubusercontent.com/integers/youtube-local-favorites/master/screenshots/youtube-local-favorites-screenshot-2.png "YouTube Local Favorites HTML Export Interface")
+| ![YouTube Local Favorites Main Interface](https://raw.githubusercontent.com/integers/youtube-local-favorites/master/screenshots/youtube-local-favorites-2014-09-25-main-interface.png "YouTube Local Favorites Main Interface") | ![YouTube Local Favorites HTML Export Interface](https://raw.githubusercontent.com/integers/youtube-local-favorites/master/screenshots/youtube-local-favorites-2014-02-26r2-html-export-interface.png "YouTube Local Favorites HTML Export Interface")
 |:----:|:----:|
 
 ## Usage
