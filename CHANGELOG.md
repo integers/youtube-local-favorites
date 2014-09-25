@@ -2,7 +2,7 @@
 
 ## 2014-09-25 [Current Version]
 
-YLF now has a Firefox extension! You can install it
+YLF can now be installed as a Firefox extension! You can install it
 [here](https://github.com/integers/youtube-local-favorites/raw/master/src/firefox-extension/youtube-local-favorites.xpi).
 
 In order to port it, a few minor bugs had to be fixed that I hadn't spotted
@@ -14,7 +14,7 @@ on YouTube and it just breaks the script
 
 ## 2014-09-24
 
-Updated script to be compatible with the latest YouTube layout design. Changes
+Updated YLF to be compatible with the latest YouTube layout design. Changes
 include:
 
 * Changed copyright notice to include GitHub username (RIP userscripts.org)
