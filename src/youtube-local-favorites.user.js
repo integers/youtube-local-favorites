@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          YouTube Local Favorites
 // @description   Adds a local favorites option.
-// @version       2014.09.24
+// @version       2014.09.25
 // @include       https://www.youtube.com*
 // @include       http://www.youtube.com*
 // @grant         none
@@ -635,8 +635,13 @@ let removeAllButton = createMenuItem(
  *** YouTube-Specific Fixes ***
  ******************************/
 
+// Update 2014-09-25: SPF doesn't seem to be working on YouTube, so this line
+// of code just causes YLF to break. For the moment I'm commenting it out but
+// in case it gets re-enabled (and uses the same variable) it'll be very
+// simple to fix again.
+//
 // SPF is a pain in the ass to figure out, so I'm disabling it
-ytspf.enabled = false;
+// ytspf.enabled = false;
 
 // Make sure the fixed header is at the top of the z axis
 // (except its pesky border-bottom, which I can't seem to
@@ -666,7 +671,7 @@ favoriteButton.appendChild(favoriteButtonText);
 // <ul>.appendChild(<li>)
 favoritesMenu.appendChild(importHeader);
 favoritesMenu.appendChild(importJSONButton);
-//favoritesMenu.appendChild(importYouTubeButton); /* Broken as of 2014-09-24*/
+//favoritesMenu.appendChild(importYouTubeButton); /* Broken as of 2014-09-25 */
 favoritesMenu.appendChild(exportHeader);
 favoritesMenu.appendChild(exportJSONButton);
 favoritesMenu.appendChild(exportHTMLButton);
@@ -680,7 +685,7 @@ favoritesMenuButton.appendChild(favoritesMenu);
 // <div>.insertBefore(<button>, <button>);
 let buttonRow = document.querySelector('#watch8-secondary-actions');
 let addButton = document.querySelector(
-    '#watch8-secondary-actions > div:first-child'
+    '#watch8-secondary-actions > :first-child'
 );
 buttonRow.insertBefore(favoriteButton, addButton);
 buttonRow.insertBefore(favoritesMenuButton, addButton);
