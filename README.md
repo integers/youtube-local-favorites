@@ -16,6 +16,12 @@ somewhat clunky. Eventually he came to me and explained the situation, and I
 found it a fantastic opportunity for automation. And so, "YouTube Local 
 Favorites" was born!
 
+## Download
+
+UserScript: [youtube-local-favorites.user.js](https://github.com/integers/youtube-local-favorites/raw/master/youtube-local-favorites.user.js)
+
+Firefox Extension: Coming soon!
+
 **Note**: this script requires at least Firefox 22. It does not work in any other 
 browser (I do not use any browser-specific extensions, but none of the other 
 browsers support the amount of ECMAScript 6 features that Firefox supports. 
@@ -30,12 +36,6 @@ this behavior, edit the script and remove the line with the following code:
 ```javascript
 ytspf.enabled = false;
 ```
-
-## Download
-
-UserScript: [youtube-local-favorites.user.js](https://github.com/integers/youtube-local-favorites/raw/master/youtube-local-favorites.user.js)
-
-Firefox Extension: Coming soon!
 
 ## Screenshots
 
