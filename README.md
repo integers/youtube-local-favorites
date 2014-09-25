@@ -31,6 +31,11 @@ this behavior, edit the script and remove the line with the following code:
 ytspf.enabled = false;
 ```
 
+## Download
+
+UserScript: [youtube-local-favorites.user.js](https://github.com/integers/youtube-local-favorites/raw/master/youtube-local-favorites.user.js)
+Firefox Extension: Coming soon!
+
 ## Screenshots
 
 These screenshots are from a previous version, but the main interface hasn't
