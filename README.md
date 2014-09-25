@@ -34,6 +34,7 @@ ytspf.enabled = false;
 ## Download
 
 UserScript: [youtube-local-favorites.user.js](https://github.com/integers/youtube-local-favorites/raw/master/youtube-local-favorites.user.js)
+
 Firefox Extension: Coming soon!
 
 ## Screenshots
