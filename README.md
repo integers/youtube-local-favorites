@@ -31,6 +31,14 @@ this behavior, edit the script and remove the line with the following code:
 ytspf.enabled = false;
 ```
 
+## Screenshots
+
+These screenshots are from a previous version, but the main interface hasn't
+changed much.
+
+| ![YouTube Local Favorites Main Interface](https://raw.githubusercontent.com/integers/youtube-local-favorites/master/screenshots/youtube-local-favorites-screenshot-1.png "YouTube Local Favorites Main Interface") | ![YouTube Local Favorites HTML Export Interface](https://raw.githubusercontent.com/integers/youtube-local-favorites/master/screenshots/youtube-local-favorites-screenshot-2.png "YouTube Local Favorites HTML Export Interface")
+|:----:|:----:|
+
 ## Adding and removing favorites
 
 To get started, simply go to any video page. Just to the left of the "Add to"
