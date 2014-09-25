@@ -45,7 +45,9 @@ changed much.
 | ![YouTube Local Favorites Main Interface](https://raw.githubusercontent.com/integers/youtube-local-favorites/master/screenshots/youtube-local-favorites-screenshot-1.png "YouTube Local Favorites Main Interface") | ![YouTube Local Favorites HTML Export Interface](https://raw.githubusercontent.com/integers/youtube-local-favorites/master/screenshots/youtube-local-favorites-screenshot-2.png "YouTube Local Favorites HTML Export Interface")
 |:----:|:----:|
 
-## Adding and removing favorites
+## Usage
+
+### Adding and removing favorites
 
 To get started, simply go to any video page. Just to the left of the "Add to"
 button, you should see a new "Favorite" button with a heart icon, as well as a
@@ -54,7 +56,7 @@ small arrow to the right of it (the "Favorites Menu" button).
 To add the current video to your local favorites, simply click the "Favorite" 
 button. To remove it, click it again.
 
-## Exporting
+### Exporting
 
 If you'd like to view a list of all your local favorites, click the "Favorites 
 Menu" button and click "HTML" or "Plain Text" under the "Export" header. This 
@@ -67,7 +69,7 @@ prompt you to save a file called "youtube-local-favorites.json" locally. This
 can be useful, for example, if you want to import it on another computer (see 
 below).
 
-## Importing
+### Importing
 
 Now for the fun stuff. To import your local favorites, click the "Favorites 
 Menu" button and click "JSON" under the "Import" header. **I would advise not 
@@ -87,7 +89,7 @@ got rid of the
 converted it to a playlist. I may attempt to fix the feature in a future
 version, but for now the option has been removed from the Favorites Menu.
 
-## Removing all favorites
+### Removing all favorites
 
 At the moment, I only support removing all your local favorites. Click the 
 "Favorites Menu" button and click "Remove All" at the very bottom. This will 
