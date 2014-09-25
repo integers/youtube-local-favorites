@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name          YouTube Local Favorites
 // @description   Adds a local favorites option.
-// @version       2014.02.26r2
+// @version       2014.09.24
 // @include       https://www.youtube.com*
 // @include       http://www.youtube.com*
 // @grant         none
 // ==/UserScript==
 
 /*
- * Copyright (C) 2014 Integer Overflow
+ * Copyright (C) 2014 integers
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -94,7 +94,7 @@ let updateState = () => {
     let favorites = getFavorites();
     let [id, title] = getVideoData();
     
-    // change the favorite button action, text color and tooltip
+    // change the favorite button action, heart icon, text color and tooltip
     if (favorites[id]) {
         favoriteButton.removeEventListener('click', addFavorite, false);
         favoriteButton.addEventListener('click', removeFavorite, false);
@@ -102,6 +102,7 @@ let updateState = () => {
             'data-tooltip-text',
             'Remove from local favorites'
         );
+        favoriteButtonHeartIcon.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAPBAMAAAAfXVIcAAAAMFBMVEUnk+Ynk+Ynk+Ynk+Ynk+Ynk+Ynk+Ynk+Ynk+Ynk+Ynk+Ynk+Ynk+Ynk+Ynk+b////v8vWtAAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfeCRgXNxGfg//NAAAAOklEQVQI12NgePeOAYz53r17AMJADgTgY9yD0G9BukDgAQNUjoEBIgQUgAiBaLDZYAYDVAAoBBWAAABBX0h05R9upwAAAABJRU5ErkJggg==';
         favoriteButtonText.style.color = '#2793e6';
     } else {
         favoriteButton.removeEventListener('click', removeFavorite, false);
@@ -110,6 +111,7 @@ let updateState = () => {
             'data-tooltip-text',
             'Add to local favorites'
         );
+        favoriteButtonHeartIcon.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAPCAQAAABHeoekAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfeCRgXGRTk7gJuAAAAoUlEQVQY032QIRKDMBBFH2l1uQCDY+AMDAaDqcFzm94Ax1E4B4LB4DDBNQKTzqSqTFIgf9Xf/2f37wJEtEg2enIEgpyeDUlLBBAzYfaqqS02EUNnNQwS6fAu4M2Da6gAzd1j+AhGfBhvCJ4ewwtCZieWXTMhQIU6lRXVb1CDPsiaxt5VHgzlf5yMdRdXsrPEKQMGw0B6dVTCwkLie0xB4Ta+9rpi0TkJHlEAAAAASUVORK5CYII=';
         favoriteButtonText.style.color = '#555';
     }
 };
@@ -149,7 +151,7 @@ let addBanner = (label, timeframe, neutral=true) => {
     banner.style.textShadow = '0 0 1px rgba(0, 0, 0, 0.45)';
     banner.style.transition = 'opacity 1000ms';
     banner.style.width = '100%';
-    banner.style.zIndex = 2000000000;
+    banner.style.zIndex = 2147483647;
     
     // if it's neutral, it'll have a  blue background. otherwise, green
     banner.style.backgroundColor = neutral ? '#2793e6' : '#74a446';
@@ -555,15 +557,27 @@ let createMenuItem = (label, callback, header=false, indented=true) => {
 let favoriteButton = document.createElement('button');
 favoriteButton.classList.add('yt-uix-button');
 favoriteButton.classList.add('yt-uix-tooltip');
-favoriteButton.classList.add('yt-uix-button-text');
-favoriteButton.classList.add('yt-uix-tooltip-reverse');
-favoriteButton.style.margin = '3.5px 0 0 0';
+favoriteButton.classList.add('yt-uix-button-size-default');
+favoriteButton.classList.add('yt-uix-button-opacity');
+favoriteButton.classList.add('yt-uix-button-has-icon');
+favoriteButton.classList.add('action-panel-trigger');
+favoriteButton.classList.add('yt-uix-button-opacity');
 favoriteButton.title = 'Add to local favorites';
 favoriteButton.type = 'button';
 
 let favoriteButtonText = document.createElement('span');
 favoriteButtonText.classList.add('yt-uix-button-content');
 favoriteButtonText.innerHTML = 'Favorite';
+
+let favoriteButtonHeart = document.createElement('span');
+favoriteButtonHeart.classList.add('yt-uix-button-heart');
+favoriteButtonHeart.classList.add('yt-uix-button-icon-wrapper');
+
+let favoriteButtonHeartIcon = document.createElement('img');
+favoriteButtonHeartIcon.classList.add('yt-uix-button-heart-icon');
+favoriteButtonHeartIcon.classList.add('yt-uix-button-icon');
+favoriteButtonHeartIcon.classList.add('yt-sprite');
+favoriteButtonHeartIcon.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAPCAQAAABHeoekAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfeCRgXGRTk7gJuAAAAoUlEQVQY032QIRKDMBBFH2l1uQCDY+AMDAaDqcFzm94Ax1E4B4LB4DDBNQKTzqSqTFIgf9Xf/2f37wJEtEg2enIEgpyeDUlLBBAzYfaqqS02EUNnNQwS6fAu4M2Da6gAzd1j+AhGfBhvCJ4ewwtCZieWXTMhQIU6lRXVb1CDPsiaxt5VHgzlf5yMdRdXsrPEKQMGw0B6dVTCwkLie0xB4Ta+9rpi0TkJHlEAAAAASUVORK5CYII=';
 
 //
 // Favorites Menu :: Button
@@ -574,9 +588,7 @@ favoritesMenuButton.classList.add('end');
 favoritesMenuButton.classList.add('yt-uix-button');
 favoritesMenuButton.classList.add('yt-uix-tooltip');
 favoritesMenuButton.classList.add('yt-uix-button-text');
-favoritesMenuButton.classList.add('yt-uix-tooltip-reverse');
 favoritesMenuButton.setAttribute('data-tooltip-text', 'Favorites Menu');
-favoritesMenuButton.style.marginTop = '3px';
 favoritesMenuButton.title = 'Favorites Menu';
 favoritesMenuButton.type = 'button';
 
@@ -619,12 +631,18 @@ let removeAllButton = createMenuItem(
     'Remove All', removeAllFavorites, false, false
 );
 
-/*******************
- *** Disable SPF ***
- *******************/
+/******************************
+ *** YouTube-Specific Fixes ***
+ ******************************/
 
 // SPF is a pain in the ass to figure out, so I'm disabling it
 ytspf.enabled = false;
+
+// Make sure the fixed header is at the top of the z axis
+// (except its pesky border-bottom, which I can't seem to
+// position over the video...)
+let fixedHeader = document.querySelector('#masthead-positioner');
+fixedHeader.style.transform = 'none';
 
 /***************************
  *** Add them to the DOM ***
@@ -634,7 +652,11 @@ ytspf.enabled = false;
 // Favorite Button
 //
 
-// <button>.appendChild(<span>);
+// <span>.appendChild(<img>);
+favoriteButtonHeart.appendChild(favoriteButtonHeartIcon)
+
+// <button>.appendChild(<span>, <span>);
+favoriteButton.appendChild(favoriteButtonHeart);
 favoriteButton.appendChild(favoriteButtonText);
 
 //
@@ -644,7 +666,7 @@ favoriteButton.appendChild(favoriteButtonText);
 // <ul>.appendChild(<li>)
 favoritesMenu.appendChild(importHeader);
 favoritesMenu.appendChild(importJSONButton);
-favoritesMenu.appendChild(importYouTubeButton);
+//favoritesMenu.appendChild(importYouTubeButton); /* Broken as of 2014-09-24*/
 favoritesMenu.appendChild(exportHeader);
 favoritesMenu.appendChild(exportJSONButton);
 favoritesMenu.appendChild(exportHTMLButton);
@@ -655,10 +677,13 @@ favoritesMenu.appendChild(removeAllButton);
 favoritesMenuButton.appendChild(favoritesMenuArrow);
 favoritesMenuButton.appendChild(favoritesMenu);
 
-// <div>.appendChild(<button>, <button>);
-let buttonRow = document.querySelector('#watch7-action-buttons');
-buttonRow.appendChild(favoriteButton);
-buttonRow.appendChild(favoritesMenuButton);
+// <div>.insertBefore(<button>, <button>);
+let buttonRow = document.querySelector('#watch8-secondary-actions');
+let addButton = document.querySelector(
+    '#watch8-secondary-actions > div:first-child'
+);
+buttonRow.insertBefore(favoriteButton, addButton);
+buttonRow.insertBefore(favoritesMenuButton, addButton);
 
 // initialize the favorite button right away
 updateState();
