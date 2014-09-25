@@ -1,6 +1,6 @@
 # YouTube Local Favorites
 
-**Current Version/Last Updated**: 2014-09-24
+**Current Version/Last Updated**: 2014-09-25
 
 **YouTube Local Favorites** lets you manage and store your favorites offline.
 
@@ -18,24 +18,14 @@ Favorites" was born!
 
 ## Download
 
-UserScript: [youtube-local-favorites.user.js](https://github.com/integers/youtube-local-favorites/raw/master/youtube-local-favorites.user.js)
+UserScript: [youtube-local-favorites.user.js](https://github.com/integers/youtube-local-favorites/raw/master/src/youtube-local-favorites.user.js)
 
-Firefox Extension: Coming soon!
+Firefox Extension: [youtube-local-favorites.xpi](https://github.com/integers/youtube-local-favorites/raw/master/src/firefox-extension/youtube-local-favorites.xpi)
 
-**Note**: this script requires at least Firefox 22. It does not work in any other 
-browser (I do not use any browser-specific extensions, but none of the other 
-browsers support the amount of ECMAScript 6 features that Firefox supports. 
-When those browsers catch up, this script will work in them).
-
-**Note #2**: For those of you who use the excellent usercript
-[YouTube Center](https://github.com/YePpHa/YouTubeCenter), you should know that
-my script disables
-[SPF](https://github.com/YePpHa/YouTubeCenter/wiki/Features#SPF) automatically,
-as my script was not written to take advantage of it. If you'd like to override
-this behavior, edit the script and remove the line with the following code:
-```javascript
-ytspf.enabled = false;
-```
+**Note**: this script requires at least Firefox 22. It does not work in any
+other browser (I do not use any browser-specific extensions, but none of the
+other browsers support the amount of ECMAScript 6 features that Firefox
+supports. When those browsers catch up, this script will work in them).
 
 ## Screenshots
 

@@ -1,6 +1,18 @@
 # Changelog
 
-## 2014-09-24 [Current Version]
+## 2014-09-25 [Current Version]
+
+YLF now has a Firefox extension! You can install it
+[here](https://github.com/integers/youtube-local-favorites/raw/master/src/firefox-extension/youtube-local-favorites.xpi).
+
+In order to port it, a few minor bugs had to be fixed that I hadn't spotted
+before. These include:
+
+* Commented out line that disabled SPF, because it doesn't seem to be working
+on YouTube and it just breaks the script
+* Updated the insertion selector to be more precise
+
+## 2014-09-24
 
 Updated script to be compatible with the latest YouTube layout design. Changes
 include:
