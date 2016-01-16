@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name          YouTube Local Favorites
 // @description   Adds a local favorites option.
-// @version       2014.09.25
+// @version       2016.01.15
 // @include       https://www.youtube.com*
 // @include       http://www.youtube.com*
 // @grant         none
 // ==/UserScript==
 
 /*
- * Copyright (C) 2014 integers
+ * Copyright (C) 2014-2016 integers
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -80,7 +80,7 @@ let getVideoData = () => {
  * @return          an array containing the same items of the NodeList
  * type    nodeListToArray :: NodeList[a] -> [a]
  */
-let nodeListToArray = nodeList => [item for (item of nodeList)];
+let nodeListToArray = nodeList => Array.from(nodeList);
 
 /**
  * Updates the properties of the favorite button based on whether the

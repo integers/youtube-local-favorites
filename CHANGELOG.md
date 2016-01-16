@@ -1,6 +1,20 @@
 # Changelog
 
-## 2014-09-25 [Current Version]
+## 2016-01-15 [Current Version]
+
+Small bugfix release. In addition, the Firefox extension has been removed from
+the repository entirely. I could update it and submit the extension to AMO
+for signing, but with the announcement of
+[WebExtensions](https://blog.mozilla.org/addons/2015/08/21/the-future-of-developing-firefox-add-ons/),
+I think it'd be better to simply rewrite it in the future once the API has
+stabilized. Until then, only the userscript will be supported.
+
+* Removed deprecated array comprehension
+(see [Bug 1220564](https://bugzilla.mozilla.org/show_bug.cgi?id=1220564)) and
+replaced it with the ```Array.from()``` method
+* Updated copyright notice with the current year
+
+## 2014-09-25
 
 YLF can now be installed as a Firefox extension! You can install it
 [here](https://github.com/integers/youtube-local-favorites/raw/master/src/firefox-extension/youtube-local-favorites.xpi).
@@ -20,7 +34,7 @@ include:
 * Changed copyright notice to include GitHub username (RIP userscripts.org)
 * Added a small heart icon (in the public domain, found
 [here](http://thenounproject.com/term/heart/219/)) next to the Favorite Button
-* Changed the z-index on the banner to be the maximum value possible
+* Changed the ```z-index``` on the banner to be the maximum value possible
 * Added new classes to the Favorite Button to make it look similar to the other
 buttons
 * Removed a class from the Favorites Menu Button to make the tooltip appear on

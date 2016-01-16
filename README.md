@@ -1,6 +1,6 @@
 # YouTube Local Favorites
 
-**Current Version/Last Updated**: 2014-09-25
+**Current Version/Last Updated**: 2016-01-15 ([Changelog](https://github.com/integers/youtube-local-favorites/blob/master/CHANGELOG.md))
 
 **YouTube Local Favorites** lets you manage and store your favorites offline.
 
@@ -19,8 +19,6 @@ Favorites" was born!
 ## Download
 
 UserScript: [youtube-local-favorites.user.js](https://github.com/integers/youtube-local-favorites/raw/master/src/youtube-local-favorites.user.js)
-
-Firefox Extension: [youtube-local-favorites.xpi](https://github.com/integers/youtube-local-favorites/raw/master/src/firefox-extension/youtube-local-favorites.xpi)
 
 **Note**: this script requires at least Firefox 22. It does not work in any
 other browser (I do not use any browser-specific extensions, but none of the
