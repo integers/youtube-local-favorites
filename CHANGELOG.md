@@ -1,6 +1,16 @@
 # Changelog
 
-## 2016-01-15 [Current Version]
+## 2017-01-07 [Current Version]
+
+Another small bugfix release.
+
+* Updated ```String.prototype.replace()``` method to conform with new syntax
+(see [Firefox Bug 1108382](https://bugzilla.mozilla.org/show_bug.cgi?id=1108382))
+* Added minor sanitizing when importing from a JSON file (fixes a display bug
+when exporting to HTML and Plain Text)
+* Updated copyright notice with the current year
+
+## 2016-01-15
 
 Small bugfix release. In addition, the Firefox extension has been removed from
 the repository entirely. I could update it and submit the extension to AMO
@@ -10,8 +20,9 @@ I think it'd be better to simply rewrite it in the future once the API has
 stabilized. Until then, only the userscript will be supported.
 
 * Removed deprecated array comprehension
-(see [Bug 1220564](https://bugzilla.mozilla.org/show_bug.cgi?id=1220564)) and
+(see [Firefox Bug 1220564](https://bugzilla.mozilla.org/show_bug.cgi?id=1220564)) and
 replaced it with the ```Array.from()``` method
+* Removed Firefox extension
 * Updated copyright notice with the current year
 
 ## 2014-09-25

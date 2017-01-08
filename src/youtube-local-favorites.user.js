@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name          YouTube Local Favorites
 // @description   Adds a local favorites option.
-// @version       2016.01.15
+// @version       2017.01.07
 // @include       https://www.youtube.com*
 // @include       http://www.youtube.com*
 // @grant         none
 // ==/UserScript==
 
 /*
- * Copyright (C) 2014-2016 integers
+ * Copyright (C) 2014-2017 integers
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -68,7 +68,8 @@ let getVideoData = () => {
 
     // marginally sanitize the video title
     title = encodeURIComponent(title);
-    title = title.replace('%22', '\"', 'g');
+    title = title.replace(/%22/g, '\"');
+    title = title.replace(/#/g, '%23');
     
     return [id, title];
 };
@@ -246,9 +247,13 @@ let importFromJSON = () => {
         
         // this is executed when the settings file is imported
         reader.onload = () => {
+        
+            // marginally sanitize the video titles
+            let sanitizedFavorites = reader.result;
+            sanitizedFavorites = sanitizedFavorites.replace(/#/g, '%23');
             
             // save it to disk
-            localStorage.setItem('ytfavorites', reader.result);
+            localStorage.setItem('ytfavorites', sanitizedFavorites);
             
             // modify the favorite button
             updateState();
@@ -309,7 +314,8 @@ let importFromYouTube = () => {
             for (let video of videos.reverse()) {
                 let id = /v\=([a-zA-Z0-9_-]+)/.exec(video.href)[1];
                 let title = encodeURIComponent(video.innerHTML);
-                title = title.replace('%22', '\"', 'g');
+                title = title.replace(/%22/g, '\"');
+                title = title.replace(/\#/g, '%23');
                 youtubeFavorites[id] = title;
             }
             
@@ -338,7 +344,8 @@ let importFromYouTube = () => {
                 for (let video of videos.reverse()) {
                     let id = /v\=([a-zA-Z0-9_-]+)/.exec(video.href)[1];
                     let title = encodeURIComponent(video.innerHTML);
-                    title = title.replace('%22', '\"', 'g');
+                    title = title.replace(/%22/g, '\"');
+                    title = title.replace(/\#/g, '%23');
                     youtubeFavorites[id] = title;
                 }
             };

@@ -1,6 +1,6 @@
 # YouTube Local Favorites
 
-**Current Version/Last Updated**: 2016-01-15 ([Changelog](https://github.com/integers/youtube-local-favorites/blob/master/CHANGELOG.md))
+**Current Version/Last Updated**: 2017-01-07 ([Changelog](https://github.com/integers/youtube-local-favorites/blob/master/CHANGELOG.md))
 
 **YouTube Local Favorites** lets you manage and store your favorites offline.
 
