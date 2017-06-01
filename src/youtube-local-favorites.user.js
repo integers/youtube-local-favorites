@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          YouTube Local Favorites
 // @description   Adds a local favorites option.
-// @version       2017.06.01
+// @version       2017.06.01r2
 // @include       https://www.youtube.com/*
 // @grant         none
 // ==/UserScript==
@@ -65,11 +65,6 @@ const getVideoData = () => {
 
     // grab the video title
     let title = document.querySelector('#eow-title').title;
-
-    // marginally sanitize the video title
-    title = encodeURIComponent(title);
-    title = title.replace(/%22/g, '\"');
-    title = title.replace(/#/g, '%23');
 
     return [id, title];
 };
@@ -245,12 +240,8 @@ const importFromJSON = () => {
 
         // this is executed when the settings file is imported
         reader.onload = () => {
-            // marginally sanitize the video titles
-            let sanitizedFavorites = reader.result;
-            sanitizedFavorites = sanitizedFavorites.replace(/#/g, '%23');
-
             // save it to disk
-            localStorage.setItem('ytfavorites', sanitizedFavorites);
+            localStorage.setItem('ytfavorites', reader.result);
 
             // modify the favorite button
             updateState();
@@ -378,11 +369,14 @@ let importFromYouTube = () => {
  */
 const exportToJSON = () => {
     // grab a fresh copy of your local favorites
-    const favorites = getFavorites();
+    let favorites = getFavorites();
+    
+    // marginally sanitize the video titles
+    favorites = encodeURIComponent(JSON.stringify(favorites));
 
     // create an <a> that gets clicked
     const a = document.createElement('a');
-    a.href = `data:text/JSON;charset=utf-8,${JSON.stringify(favorites)}`;
+    a.href = `data:text/JSON;charset=utf-8,${favorites}`;
 
     // set the custom filename
     a.download = 'youtube-local-favorites.json';
@@ -407,12 +401,13 @@ const exportToHTML = () => {
 
     // CSS markup
     const CSS = 'html{font-family:Arimo,sans-serif;font-size:13px;' +
-        'background-color:rgb(242,242,242)}body{background-color:white;' +
+        'background-color:#f1f1f1}body{background-color:#fff;' +
+        'box-shadow:0 1px 2px rgba(0,0,0,.1);' +
         'padding:5px 20px;margin:30px}span{' +
-        'background-color:rgb(102,102,102);' +
-        'border-radius:3px;color:rgb(240,240,240);padding:4px 6px}' +
-        'li{padding:5px}a{color:black!important}' +
-        'a:hover{color:rgb(39,147,230)!important}';
+        'background-color:#666;' +
+        'border-radius:3px;color:#f0f0f0;padding:4px 6px}' +
+        'li{padding:5px}a{color:#333!important}' +
+        'a:hover{color:#167ac6!important}';
 
     // header markup
     const headerHTML = '<!doctype html>' +
@@ -459,10 +454,10 @@ const exportToPlainText = () => {
     const favorites = getFavorites();
 
     // loop through your favorites and plaintextify them
-    let favoritesPlaintext = '%0AYouTube Local Favorites\n%0A%0A';
+    let favoritesPlaintext = '\nYouTube Local Favorites\n\n';
     Object.keys(favorites).reverse().forEach((id) => {
         favoritesPlaintext += `${favorites[id]}: ` +
-        `https://www.youtube.com/watch?v=${id}\n%0A`;
+        `https://www.youtube.com/watch?v=${id}\n`;
     });
 
     // if there aren't any, tell the user to add some
@@ -471,6 +466,9 @@ const exportToPlainText = () => {
         '"Favorite" button on a video page to favorite a video, and ' +
         'it\'ll show up here (make sure to re-export to Plain Text).';
     }
+    
+    // marginally sanitize the video titles
+    favoritesPlaintext = encodeURIComponent(favoritesPlaintext);
 
     // open the link
     window.open(`data:;charset=utf-8,${favoritesPlaintext}`);

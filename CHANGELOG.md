@@ -1,6 +1,14 @@
 # Changelog
 
-## 2017-06-01 [Current Version]
+## 2017-06-01r2 [Current Version]
+
+Small bugfix release.
+
+* Standardized sanitization (fixes import & export options breaking on special
+characters)
+* Made HTML export option more consistent with YouTube's theme
+
+## 2017-06-01
 
 Major update that includes fixes for several long-standing bugs and some
 enhancements.
