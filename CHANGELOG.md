@@ -29,7 +29,7 @@ called at the end of the script for the initial page load, and then called
 every time the "spfdone" page event is fired (when a new page is dynamically
 loaded). It's still highly experimental, but it seems to work without any
 issues
-* Fix HTML export option when using the [EasyList](https://easylist.to/) filter
+* Fixed HTML export option when using the [EasyList](https://easylist.to/) filter
 lists in ad blockers. The HTML export option originally used a
 [data URI](https://en.wikipedia.org/wiki/Data_URI_scheme) to display its
 contents, which is blocked by EasyList due to malicious websites abusing the
