@@ -29,8 +29,8 @@ called at the end of the script for the initial page load, and then called
 every time the "spfdone" page event is fired (when a new page is dynamically
 loaded). It's still highly experimental, but it seems to work without any
 issues
-* Fixed HTML export option when using the [EasyList](https://easylist.to/) filter
-lists in ad blockers. The HTML export option originally used a
+* Fixed HTML export option when using the [EasyList](https://easylist.to/)
+filter lists in ad blockers. The HTML export option originally used a
 [data URI](https://en.wikipedia.org/wiki/Data_URI_scheme) to display its
 contents, which is blocked by EasyList due to malicious websites abusing the
 feature to display pop-ups. YLF now opens a blank page and inserts the HTML
@@ -54,7 +54,8 @@ present HTML first, then Plain Text, and finally JSON
 Another small bugfix release.
 
 * Updated ```String.prototype.replace()``` method to conform with new syntax
-(see [Firefox Bug 1108382](https://bugzilla.mozilla.org/show_bug.cgi?id=1108382))
+(see
+[Firefox Bug 1108382](https://bugzilla.mozilla.org/show_bug.cgi?id=1108382))
 * Added minor sanitizing when importing from a JSON file (fixes a display bug
 when exporting to HTML and Plain Text)
 * Updated copyright notice with the current year
@@ -69,8 +70,9 @@ I think it'd be better to simply rewrite it in the future once the API has
 stabilized. Until then, only the userscript will be supported.
 
 * Removed deprecated array comprehension
-(see [Firefox Bug 1220564](https://bugzilla.mozilla.org/show_bug.cgi?id=1220564)) and
-replaced it with the ```Array.from()``` method
+(see
+[Firefox Bug 1220564](https://bugzilla.mozilla.org/show_bug.cgi?id=1220564))
+and replaced it with the ```Array.from()``` method
 * Removed Firefox extension
 * Updated copyright notice with the current year
 
@@ -93,7 +95,7 @@ include:
 
 * Changed copyright notice to include GitHub username (RIP userscripts.org)
 * Added a small heart icon (in the public domain, found
-[here](http://thenounproject.com/term/heart/219/)) next to the Favorite Button
+[here](https://thenounproject.com/term/heart/219/)) next to the Favorite Button
 * Changed the ```z-index``` on the banner to be the maximum value possible
 * Added new classes to the Favorite Button to make it look similar to the other
 buttons
