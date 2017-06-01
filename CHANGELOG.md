@@ -10,17 +10,25 @@ enhancements.
 base and make a few exceptions for stylistic/practical reasons. This ensures
 that I use the latest best practices for the script. Noteworthy rules that were
 used to streamline the script include:
+    * [no-unused-vars](http://eslint.org/docs/rules/no-unused-vars)
     * [prefer-const](http://eslint.org/docs/rules/prefer-const)
+    * [no-param-reassign](http://eslint.org/docs/rules/no-param-reassign)
     * [no-trailing-spaces](http://eslint.org/docs/rules/no-trailing-spaces)
     * [padded-blocks](http://eslint.org/docs/rules/padded-blocks)
     * [space-infix-ops](http://eslint.org/docs/rules/space-infix-ops)
     * [camelcase](http://eslint.org/docs/rules/camelcase)
     * [prefer-template](http://eslint.org/docs/rules/prefer-template)
     * [spaced-comment](http://eslint.org/docs/rules/spaced-comment)
+    * [no-useless-escape](http://eslint.org/docs/rules/no-useless-escape)\
+    * [semi](http://eslint.org/docs/rules/semi)
 * [SPF (Structured Page Fragments)](https://youtube.github.io/spfjs/) support!
 This allows the favorite buttons to be loaded dynamically when clicking videos,
-without having to refresh the page. It's still highly experimental, but it
-seems to work without any issues
+without having to refresh the page. In order to support it, the adding of the
+favorite buttons to the DOM were isolated into a function, and the function is
+called at the end of the script for the initial page load, and then called
+every time the "spfdone" page event is fired (when a new page is dynamically
+loaded). It's still highly experimental, but it seems to work without any
+issues
 * Fix HTML export option when using the [EasyList](https://easylist.to/) filter
 lists in ad blockers. The HTML export option originally used a
 [data URI](https://en.wikipedia.org/wiki/Data_URI_scheme) to display its
@@ -30,8 +38,11 @@ directly
 * Replaced PNG with SVG for heart icons, optimized via
 [SVGO](https://github.com/svg/svgo) and the script in
 [this CodePen post](https://codepen.io/tigt/post/optimizing-svgs-in-data-uris)
+* Made the favorite buttons more similar in style to the other YouTube buttons
 * Removed ```@include``` rule for non-https YouTube and modified rule for https
 YouTube
+* Removed ```nodeListToArray()``` function, since it's effectively a wrapper
+for ```Array.from()```
 * Added note about the use of an
 [IIFE (Immediately-Invoked Function Expression)](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression)
 * Re-arranged order of options in the Favorites Menu: the "Import" button &
