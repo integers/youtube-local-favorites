@@ -20,10 +20,10 @@ Favorites" was born!
 
 UserScript: [youtube-local-favorites.user.js](https://github.com/integers/youtube-local-favorites/raw/master/src/youtube-local-favorites.user.js)
 
-**Note**: this script requires at least Firefox 22. It does not work in any
-other browser (I do not use any browser-specific extensions, but none of the
-other browsers support the amount of ECMAScript 6 features that Firefox
-supports. When those browsers catch up, this script will work in them).
+**Note**: this script requires a modern browser that supports the latest
+[ECMAScript 6 features](https://kangax.github.io/compat-table/es6/).
+I develop the script using Firefox, but it should work in any modern browser,
+as it does not use any browser-specific extensions.
 
 ## Screenshots
 
@@ -76,9 +76,9 @@ version, but for now the option has been removed from the Favorites Menu.
 
 ### Removing all favorites
 
-At the moment, I only support removing all your local favorites. Click the 
-"Favorites Menu" button and click "Remove All" at the very bottom. This will 
-prompt you, and if you agree, it will remove all local favorites.
+To remove all your local favorites, click the "Favorites Menu" button and click
+"Remove All" at the very bottom. This will prompt you, and if you agree, it
+will remove all local favorites.
 
 To individually remove videos from your local favorites, simply visit the video 
 itself and click the "Favorite" button to remove it.
