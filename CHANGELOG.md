@@ -1,6 +1,44 @@
 # Changelog
 
-## 2017-01-07 [Current Version]
+## 2017-06-01 [Current Version]
+
+Major update that includes fixes for several long-standing bugs and some
+enhancements.
+
+* YLF is now run through [ESLint](http://eslint.org/). Specifically, I use
+[Airbnb's JavaScript Style Guide](https://github.com/airbnb/javascript) as a
+base and make a few exceptions for stylistic/practical reasons. This ensures
+that I use the latest best practices for the script. Noteworthy rules that were
+used to streamline the script include:
+    * [prefer-const](http://eslint.org/docs/rules/prefer-const)
+    * [no-trailing-spaces](http://eslint.org/docs/rules/no-trailing-spaces)
+    * [padded-blocks](http://eslint.org/docs/rules/padded-blocks)
+    * [space-infix-ops](http://eslint.org/docs/rules/space-infix-ops)
+    * [camelcase](http://eslint.org/docs/rules/camelcase)
+    * [prefer-template](http://eslint.org/docs/rules/prefer-template)
+    * [spaced-comment](http://eslint.org/docs/rules/spaced-comment)
+* [SPF (Structured Page Fragments)](https://youtube.github.io/spfjs/) support!
+This allows the favorite buttons to be loaded dynamically when clicking videos,
+without having to refresh the page. It's still highly experimental, but it
+seems to work without any issues
+* Fix HTML export option when using the [EasyList](https://easylist.to/) filter
+lists in ad blockers. The HTML export option originally used a
+[data URI](https://en.wikipedia.org/wiki/Data_URI_scheme) to display its
+contents, which is blocked by EasyList due to malicious websites abusing the
+feature to display pop-ups. YLF now opens a blank page and inserts the HTML
+directly
+* Replaced PNG with SVG for heart icons, optimized via
+[SVGO](https://github.com/svg/svgo) and the script in
+[this CodePen post](https://codepen.io/tigt/post/optimizing-svgs-in-data-uris)
+* Removed ```@include``` rule for non-https YouTube and modified rule for https
+YouTube
+* Added note about the use of an
+[IIFE (Immediately-Invoked Function Expression)](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression)
+* Re-arranged order of options in the Favorites Menu: the "Import" button &
+options are now under the "Export" button and options, and the "Export" options
+present HTML first, then Plain Text, and finally JSON
+
+## 2017-01-07
 
 Another small bugfix release.
 
