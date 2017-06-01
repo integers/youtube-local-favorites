@@ -19,7 +19,7 @@ used to streamline the script include:
     * [camelcase](http://eslint.org/docs/rules/camelcase)
     * [prefer-template](http://eslint.org/docs/rules/prefer-template)
     * [spaced-comment](http://eslint.org/docs/rules/spaced-comment)
-    * [no-useless-escape](http://eslint.org/docs/rules/no-useless-escape)\
+    * [no-useless-escape](http://eslint.org/docs/rules/no-useless-escape)
     * [semi](http://eslint.org/docs/rules/semi)
 * [SPF (Structured Page Fragments)](https://youtube.github.io/spfjs/) support!
 This allows the favorite buttons to be loaded dynamically when clicking videos,
