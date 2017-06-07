@@ -1,6 +1,13 @@
 # Changelog
 
-## 2017-06-07r3 [Current Version]
+## 2017-06-07r4 [Current Version]
+
+Yet another small bugfix release.
+
+* Added condition to playlist import option so that that the button doesn't
+appear on YouTube Mixes (playlists with unlimited videos)
+
+## 2017-06-07r3
 
 Another small bugfix release.
 

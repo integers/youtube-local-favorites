@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          YouTube Local Favorites
 // @description   Adds a local favorites option.
-// @version       2017.06.07r3
+// @version       2017.06.07r4
 // @include       https://www.youtube.com/*
 // @grant         none
 // ==/UserScript==
@@ -806,7 +806,10 @@ const createAndConstructElements = () => {
 
     // if the video is part of a playlist, add the option to import the entire
     // playlist
-    if (document.querySelector('div.playlist-header-content')) {
+    if (
+        document.querySelector('div.playlist-header-content') &&
+        !(document.querySelector('span.playlist-mix-icon'))
+    ) {
         favoritesMenu.appendChild(importYouTubePlaylistButton);
     }
 
