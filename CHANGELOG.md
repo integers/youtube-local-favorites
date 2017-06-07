@@ -1,6 +1,16 @@
 # Changelog
 
-## 2017-06-07r2 [Current Version]
+## 2017-06-07r3 [Current Version]
+
+Another small bugfix release.
+
+* Replaced `Event.target` with `Event.currentTarget` when calling 
+`updateFavoriteButton()`, which fixes a bug where the favorite button wasn't
+working if clicked more than once
+* Slightly simplified the HTML export option
+* Added the total number of local favorites to the Plain Text export option
+
+## 2017-06-07r2
 
 Tiny bugfix release.
 
@@ -30,7 +40,7 @@ background, and updated its style to be the exact height and length of the
 fixed YouTube header
 * Removed the code that changed the position of the fixed YouTube header, as it
 already displays above the video
-* JSON Export option now includes a datetimestamp in the filename, so you can
+* JSON export option now includes a datetimestamp in the filename, so you can
 easily remember what favorites you had at the given date and time
 * Removed optional third "useCapture" argument from
 `EventTarget.addEventListener()` and

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          YouTube Local Favorites
 // @description   Adds a local favorites option.
-// @version       2017.06.07r2
+// @version       2017.06.07r3
 // @include       https://www.youtube.com/*
 // @grant         none
 // ==/UserScript==
@@ -214,7 +214,9 @@ let addFavorite = event => {
 
     // update the favorite button
     updateFavoriteButton(
-        event.target.button, event.target.icon, event.target.text
+        event.currentTarget.button,
+        event.currentTarget.icon,
+        event.currentTarget.text
     );
 
     // let the user know it was added
@@ -239,7 +241,9 @@ let removeFavorite = event => {
 
     // update the favorite button
     updateFavoriteButton(
-        event.target.button, event.target.icon, event.target.text
+        event.currentTarget.button,
+        event.currentTarget.icon,
+        event.currentTarget.text
     );
 
     // let the user know it was removed
@@ -295,9 +299,11 @@ const exportToHTML = () => {
     // footer markup
     const footerHTML = Object.keys(favorites).length !== 0 ? '</ol>' : '';
 
+    // construct the page
+    const HTML = `${headerHTML}${favoritesHTML}${footerHTML}`;
+
     // open the link
-    window.open().document.body.innerHTML = `${headerHTML}${favoritesHTML}` +
-    `${footerHTML}`;
+    window.open().document.body.innerHTML = HTML;
 };
 
 /**
@@ -310,7 +316,8 @@ const exportToPlainText = () => {
     const favorites = getFavorites();
 
     // loop through your favorites and plaintextify them
-    let favoritesPlaintext = '\nYouTube Local Favorites\n\n';
+    let favoritesPlaintext = '\nYouTube Local Favorites ' +
+        `[${Object.keys(favorites).length}]\n\n`;
     Object.keys(favorites).reverse().forEach((id) => {
         favoritesPlaintext += `${favorites[id]}: ` +
         `https://www.youtube.com/watch?v=${id}\n`;
