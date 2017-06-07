@@ -1,6 +1,6 @@
 # YouTube Local Favorites
 
-**Current Version/Last Updated**: 2017-06-01r2 ([Changelog](https://github.com/integers/youtube-local-favorites/blob/master/CHANGELOG.md))
+**Current Version/Last Updated**: 2017-06-07 ([Changelog](https://github.com/integers/youtube-local-favorites/blob/master/CHANGELOG.md))
 
 **YouTube Local Favorites** lets you manage and store your favorites offline.
 
@@ -21,7 +21,7 @@ Favorites" was born!
 UserScript: [youtube-local-favorites.user.js](https://github.com/integers/youtube-local-favorites/raw/master/src/youtube-local-favorites.user.js)
 
 **Note**: this script requires a modern browser that supports the latest
-[ECMAScript 6 features](https://kangax.github.io/compat-table/es6/).
+[ECMAScript 2017 features](https://kangax.github.io/compat-table/es2016plus/).
 I develop the script using Firefox, but it should work in any modern browser,
 as it does not use any browser-specific extensions.
 
@@ -65,14 +65,15 @@ directly. I understand that this is a massive security risk, but if you only
 import JSON files containing your favorites that you, yourself, exported, you
 have nothing to worry about.
 
-YouTube Local Favorites formerly supported an experimental feature that allowed
-you to copy all your existing YouTube favorites into your local favorites. It
-was prone to break very easily because it relied on many YouTube features that
-are out of my control. And, suffice to say, it did finally break when YouTube
-got rid of the
-[traditional favorites page](https://www.youtube.com/my_favorites) and
-converted it to a playlist. I may attempt to fix the feature in a future
-version, but for now the option has been removed from the Favorites Menu.
+To import videos from a YouTube playlist, you must first be watching a video
+that's part of a playlist (there will be a sidebar on the right showing all
+the videos in the playlist). Click the "Favorites Menu" button and click
+"YouTube Playlist" under the "Import" header. You will be asked if you're sure,
+as **it will replace all your existing local favorites with the videos in the
+playlist**. Confirm, and all the videos will be imported. If the playlist is
+large (more than 100 videos), give it some time, as it will have to load the
+additional pages (the videos are parsed from the playlist page, which are
+loaded 100 videos at a time).
 
 ### Removing all favorites
 

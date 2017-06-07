@@ -1,6 +1,34 @@
 # Changelog
 
-## 2017-06-01r2 [Current Version]
+## 2017-06-07 [Current Version]
+
+This update brings back a former feature and has a few minor enhancements.
+
+* YLF now has a playlist import option! YLF used to have a feature that allowed
+you to copy all your existing YouTube favorites into your local favorites. This
+feature relied on parsing the
+[traditional favorites page](https://www.youtube.com/my_favorites), which was
+removed at some point in 2014 and converted to a playlist. This new feature
+now allows you to import entire playlists into your local favorites, making it
+much more versatile than the previous feature - you can now not only import
+your existing YouTube favorites, but any playlist that exists on YouTube
+* Refactored the entire script so that it's much more functional. The creation
+and construction of the button DOM nodes were moved into a function, and
+several of the functions now have arguments for the buttons to be passed in,
+so that there are as few "global" variables as possible. The only code that's
+in the "global" scope of the IIFE is the SPF event listener and the main()
+function. Some other functional patterns were included, such as the replacement
+of ```for``` loops with ```Array.prototype.reduceRight()```
+* Updated the ```addBanner()``` function to support error messages with a red
+background
+* JSON Export option now includes a datetimestamp in the filename, so you can
+easily remember what favorites you had at the given date and time
+* Removed optional third "useCapture" argument from
+```EventTarget.addEventListener()``` and
+```EventTarget.removeEventListener()``` methods, as "false" is the default
+argument
+
+## 2017-06-01r2
 
 Small bugfix release.
 
