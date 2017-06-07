@@ -4,7 +4,7 @@
 
 Tiny bugfix release.
 
-* Removed ```console.log``` debug message when using the playlist import option
+* Removed `console.log` debug message when using the playlist import option
 
 ## 2017-06-07
 
@@ -24,12 +24,8 @@ several of the functions now have arguments for the buttons to be passed in,
 so that there are as few "global" variables as possible. The only code that's
 in the "global" scope of the IIFE is the SPF event listener and the main()
 function. Some other functional patterns were included, such as the replacement
-of ```for``` loops with 
-`Array.prototype.reduceRight()`{:.language-javascript}
-`Array.prototype.reduceRight()`{:.javascript}
-`Array.prototype.reduceRight()`{.language-javascript}
-`Array.prototype.reduceRight()`{.javascript}
-* Updated the ```addBanner()``` function to support error messages with a red
+of `for` loops with  `Array.prototype.reduceRight()`
+* Updated the `addBanner()` function to support error messages with a red
 background, and updated its style to be the exact height and length of the
 fixed YouTube header
 * Removed the code that changed the position of the fixed YouTube header, as it
@@ -37,8 +33,8 @@ already displays above the video
 * JSON Export option now includes a datetimestamp in the filename, so you can
 easily remember what favorites you had at the given date and time
 * Removed optional third "useCapture" argument from
-```EventTarget.addEventListener()``` and
-```EventTarget.removeEventListener()``` methods, as "false" is the default
+`EventTarget.addEventListener()` and
+`EventTarget.removeEventListener()` methods, as "false" is the default
 argument
 
 ## 2017-06-01r2
@@ -88,10 +84,10 @@ directly
 [SVGO](https://github.com/svg/svgo) and the script in
 [this CodePen post](https://codepen.io/tigt/post/optimizing-svgs-in-data-uris)
 * Made the favorite buttons more similar in style to the other YouTube buttons
-* Removed ```@include``` rule for non-https YouTube and modified rule for https
+* Removed `@include` rule for non-https YouTube and modified rule for https
 YouTube
-* Removed ```nodeListToArray()``` function, since it's effectively a wrapper
-for ```Array.from()```
+* Removed `nodeListToArray()` function, since it's effectively a wrapper
+for `Array.from()`
 * Added note about the use of an
 [IIFE (Immediately-Invoked Function Expression)](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression)
 * Re-arranged order of options in the Favorites Menu: the "Import" button &
@@ -102,7 +98,7 @@ present HTML first, then Plain Text, and finally JSON
 
 Another small bugfix release.
 
-* Updated ```String.prototype.replace()``` method to conform with new syntax
+* Updated `String.prototype.replace()` method to conform with new syntax
 (see
 [Firefox Bug 1108382](https://bugzilla.mozilla.org/show_bug.cgi?id=1108382))
 * Added minor sanitizing when importing from a JSON file (fixes a display bug
@@ -121,7 +117,7 @@ stabilized. Until then, only the userscript will be supported.
 * Removed deprecated array comprehension
 (see
 [Firefox Bug 1220564](https://bugzilla.mozilla.org/show_bug.cgi?id=1220564))
-and replaced it with the ```Array.from()``` method
+and replaced it with the `Array.from()` method
 * Removed Firefox extension
 * Updated copyright notice with the current year
 
@@ -145,14 +141,14 @@ include:
 * Changed copyright notice to include GitHub username (RIP userscripts.org)
 * Added a small heart icon (in the public domain, found
 [here](https://thenounproject.com/term/heart/219/)) next to the Favorite Button
-* Changed the ```z-index``` on the banner to be the maximum value possible
+* Changed the `z-index` on the banner to be the maximum value possible
 * Added new classes to the Favorite Button to make it look similar to the other
 buttons
 * Removed a class from the Favorites Menu Button to make the tooltip appear on
 the top rather than the bottom
 * Removed the extra margins on the Favorite and Favorites Menu buttons to align
 them properly
-* Removed the ```transform``` attribute on the fixed header to make sure it's
+* Removed the `transform` attribute on the fixed header to make sure it's
 at the top of the z-axis, uncovered by the video player
 * Removed the YouTube import option from the Favorites Menu, as the feature
 stopped working when YouTube got rid of the traditional favorites page and
