@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          YouTube Local Favorites
 // @description   Adds a local favorites option.
-// @version       2017.06.07
+// @version       2017.06.07r2
 // @include       https://www.youtube.com/*
 // @grant         none
 // ==/UserScript==
@@ -526,7 +526,6 @@ const importFromYouTubePlaylist = (
         // base case: if there's no "Load more" button, return the playlist
         const loadMoreButton = videoTable.querySelector('.load-more-button');
         if (!loadMoreButton) {
-            console.log('No "Load more" button found, exiting loadPages()...');
             return Object.assign({}, newPlaylist, playlist);
             // Object spread operator: uncomment and replace when the spec is
             // finalized and there's better browser support
