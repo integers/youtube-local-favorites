@@ -24,7 +24,8 @@ several of the functions now have arguments for the buttons to be passed in,
 so that there are as few "global" variables as possible. The only code that's
 in the "global" scope of the IIFE is the SPF event listener and the main()
 function. Some other functional patterns were included, such as the replacement
-of ```for``` loops with ```javascript
+of ```for``` loops with
+```javascript
 Array.prototype.reduceRight()
 ```
 * Updated the ```addBanner()``` function to support error messages with a red
