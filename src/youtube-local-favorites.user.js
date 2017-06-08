@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          YouTube Local Favorites
 // @description   Adds a local favorites option.
-// @version       2017.06.07r4
+// @version       2017.06.07r5
 // @include       https://www.youtube.com/*
 // @grant         none
 // ==/UserScript==
@@ -410,8 +410,19 @@ const importFromJSON = (
 
         // this is executed when the settings file is imported
         reader.onload = () => {
+            // add the new videos to the existing local favorites
+            const videos = Object.assign(
+                {}, getFavorites(), JSON.parse(reader.result)
+            );
+            // Object spread operator: uncomment and replace when the spec is
+            // finalized and there's better browser support
+            // const videos = {
+            //     ...getFavorites(),
+            //     ...JSON.parse(reader.result)
+            // };
+
             // save it to disk
-            localStorage.setItem('ytfavorites', reader.result);
+            localStorage.setItem('ytfavorites', JSON.stringify(videos));
 
             // update the favorite button
             updateFavoriteButton(
@@ -579,7 +590,13 @@ const importFromYouTubePlaylist = (
             );
 
             playlist = await loadPages(initialPlaylist, playlist, 'document');
-
+            
+            // add the new videos to the existing local favorites
+            playlist = Object.assign({}, getFavorites(), playlist);
+            // Object spread operator: uncomment and replace when the spec is
+            // finalized and there's better browser support
+            // playlist = { ...getFavorites(), ...playlist };
+            
             // save them all to disk
             localStorage.setItem('ytfavorites', JSON.stringify(playlist));
 

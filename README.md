@@ -1,6 +1,6 @@
 # YouTube Local Favorites
 
-**Current Version/Last Updated**: 2017-06-07r4 ([Changelog](https://github.com/integers/youtube-local-favorites/blob/master/CHANGELOG.md))
+**Current Version/Last Updated**: 2017-06-07r5 ([Changelog](https://github.com/integers/youtube-local-favorites/blob/master/CHANGELOG.md))
 
 **YouTube Local Favorites** lets you manage and store your favorites offline.
 
@@ -68,12 +68,11 @@ have nothing to worry about.
 To import videos from a YouTube playlist, you must first be watching a video
 that's part of a playlist (there will be a sidebar on the right showing all
 the videos in the playlist). Click the "Favorites Menu" button and click
-"YouTube Playlist" under the "Import" header. You will be asked if you're sure,
-as **it will replace all your existing local favorites with the videos in the
-playlist**. Confirm, and all the videos will be imported. If the playlist is
-large (more than 100 videos), give it some time, as it will have to load the
-additional pages (the videos are parsed from the playlist page, which are
-loaded 100 videos at a time).
+"YouTube Playlist" under the "Import" header. You will be asked if you're sure.
+Confirm, and all the videos will be imported. If the playlist is large (more
+than 100 videos), give it some time, as it will have to load the additional
+pages (the videos are parsed from the playlist page, which are loaded 100
+videos at a time).
 
 ### Removing all favorites
 

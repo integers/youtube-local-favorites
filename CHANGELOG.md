@@ -1,6 +1,13 @@
 # Changelog
 
-## 2017-06-07r4 [Current Version]
+## 2017-06-07r5 [Current Version]
+
+This release adds a minor enhancement.
+
+* Changed JSON and YouTube import options so that imported videos are added to
+your existing local favorites, instead of overwriting them
+
+## 2017-06-07r4
 
 Yet another small bugfix release.
 
