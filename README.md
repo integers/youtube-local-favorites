@@ -1,6 +1,6 @@
 # YouTube Local Favorites
 
-**Current Version/Last Updated**: 2017-06-07r5 ([Changelog](https://github.com/integers/youtube-local-favorites/blob/master/CHANGELOG.md))
+**Current Version/Last Updated**: 2017-06-07r5 ([Changelog](https://gitlab.com/integers/youtube-local-favorites/blob/master/CHANGELOG.md))
 
 **YouTube Local Favorites** lets you manage and store your favorites offline.
 
@@ -18,7 +18,7 @@ Favorites" was born!
 
 ## Download
 
-UserScript: [youtube-local-favorites.user.js](https://github.com/integers/youtube-local-favorites/raw/master/src/youtube-local-favorites.user.js)
+UserScript: [youtube-local-favorites.user.js](https://gitlab.com/integers/youtube-local-favorites/raw/master/src/youtube-local-favorites.user.js)
 
 **Note**: this script requires a modern browser that supports the latest
 [ECMAScript 2017 features](https://kangax.github.io/compat-table/es2016plus/).
@@ -27,7 +27,7 @@ as it does not use any browser-specific extensions.
 
 ## Screenshots
 
-| ![YouTube Local Favorites Main Interface](https://raw.githubusercontent.com/integers/youtube-local-favorites/master/screenshots/youtube-local-favorites-2014-09-25-main-interface.png "YouTube Local Favorites Main Interface") | ![YouTube Local Favorites HTML Export Interface](https://raw.githubusercontent.com/integers/youtube-local-favorites/master/screenshots/youtube-local-favorites-2014-02-26r2-html-export-interface.png "YouTube Local Favorites HTML Export Interface")
+| ![YouTube Local Favorites Main Interface](https://gitlab.com/integers/youtube-local-favorites/raw/master/screenshots/youtube-local-favorites-2014-09-25-main-interface.png "YouTube Local Favorites Main Interface") | ![YouTube Local Favorites HTML Export Interface](https://gitlab.com/integers/youtube-local-favorites/raw/master/screenshots/youtube-local-favorites-2014-02-26r2-html-export-interface.png "YouTube Local Favorites HTML Export Interface")
 |:----:|:----:|
 
 ## Usage
